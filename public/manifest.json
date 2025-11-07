@@ -1,0 +1,21 @@
+{
+  "short_name": "Marcianitos",
+  "name": "Los Marcianitos del Saber",
+  "description": "Un juego educativo de matemáticas para niños de tercer grado.",
+  "icons": [
+    {
+      "src": "/logo-inmaculada.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/logo-inmaculada.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0b0b2a",
+  "background_color": "#00001a"
+}
