@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 export default function QuestionModal({ question, onAnswer }) {
   const [userAnswer, setUserAnswer] = useState('');
-  const [timeLeft, setTimeLeft] = useState(60); // ✅ Estado para el tiempo restante
+  const [timeLeft, setTimeLeft] = useState(120); // ✅ Estado para el tiempo restante
   const [selectedOption, setSelectedOption] = useState(null);
 
   // ✅ Temporizador
