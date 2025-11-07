@@ -1,0 +1,154 @@
+/* src/styles/game-board.css */
+
+/* Contenedor con scroll */
+.game-board-scroll-container {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 60px);
+  overflow: auto;
+  z-index: 1;
+  background: transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Contenido del tablero (tamaño fijo) */
+.game-board-content {
+  position: relative;
+  width: 1300px;
+  height: 700px;
+  will-change: transform;
+}
+
+/* Imagen del tablero */
+.game-board-tablero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1300px;
+  height: 700px;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Avatar del jugador */
+/* Avatar del jugador — con resplandor */
+.game-board-avatar {
+  position: absolute;
+  font-size: 48px;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  /* Resplandor: combinación de sombras suaves */
+  text-shadow:
+    0 0 8px rgba(255, 255, 255, 0.8),
+    0 0 16px rgba(107, 216, 147, 0.6),
+    2px 2px 6px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+  /* Opcional: ligera animación de pulso suave */
+  animation: avatarGlow 2s infinite alternate ease-in-out;
+}
+
+/* Animación sutil de pulso (opcional, pero atractiva) */
+@keyframes avatarGlow {
+  from {
+    text-shadow:
+      0 0 8px rgba(255, 255, 255, 0.7),
+      0 0 16px rgba(107, 216, 147, 0.5),
+      2px 2px 6px rgba(0, 0, 0, 0.7);
+  }
+  to {
+    text-shadow:
+      0 0 10px rgba(255, 255, 255, 0.9),
+      0 0 20px rgba(107, 216, 147, 0.7),
+      2px 2px 6px rgba(0, 0, 0, 0.7);
+  }
+}
+/* Fondo espacial */
+.game-board-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Estrellas fijas (densas y variadas) */
+.game-board-estrellas-fijas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background:
+    /* Zona superior izquierda - densa */
+    radial-gradient(circle at 5% 10%, white 1.2px, transparent 1.2px),
+    radial-gradient(circle at 12% 18%, white 1px, transparent 1px),
+    radial-gradient(circle at 20% 5%, white 0.9px, transparent 1px),
+    radial-gradient(circle at 28% 22%, white 1.1px, transparent 1.1px),
+
+    /* Centro - moderada */
+    radial-gradient(circle at 45% 40%, white 0.8px, transparent 1px),
+    radial-gradient(circle at 55% 50%, white 1px, transparent 1px),
+    radial-gradient(circle at 50% 60%, white 0.7px, transparent 1px),
+
+    /* Derecha - densa */
+    radial-gradient(circle at 75% 20%, white 1.2px, transparent 1.2px),
+    radial-gradient(circle at 85% 35%, white 1px, transparent 1px),
+    radial-gradient(circle at 92% 15%, white 0.9px, transparent 1px),
+    radial-gradient(circle at 88% 50%, white 1.1px, transparent 1.1px),
+
+    /* Inferior - moderada */
+    radial-gradient(circle at 10% 85%, white 1px, transparent 1px),
+    radial-gradient(circle at 30% 90%, white 0.8px, transparent 1px),
+    radial-gradient(circle at 60% 88%, white 0.9px, transparent 1px),
+    radial-gradient(circle at 90% 92%, white 1px, transparent 1px),
+
+    /* Esquinas - suaves */
+    radial-gradient(circle at 3% 95%, white 0.7px, transparent 1px),
+    radial-gradient(circle at 97% 8%, white 0.8px, transparent 1px);
+  background-size: 100% 100%;
+  opacity: 0.7;
+}
+
+/* Botón flotante FIJO EN PANTALLA (no en contenido scrollable) */
+.game-board-back-to-avatar-overlay {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+}
+
+.game-board-back-to-avatar {
+  background: rgba(72, 187, 120, 0.95);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  min-width: 80px;
+  text-align: center;
+}
+
+.game-board-back-to-avatar span:first-child {
+  font-size: 24px;
+}
+
+.game-board-back-to-avatar span:last-child {
+  font-size: 14px;
+}
+
+.game-board-back-to-avatar:hover {
+  background: rgba(72, 187, 120, 1);
+  transform: scale(1.05);
+}
